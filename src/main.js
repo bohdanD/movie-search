@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 
 class MainContainer extends React.Component{
     render(){
-        return (<h1>Hello</h1>);
+        return (<h1>Hello dev branch</h1>);
     }
 }
 
