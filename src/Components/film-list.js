@@ -10,7 +10,18 @@ class FilmList extends React.Component{
     }
 
     render(){
-        return <Film />
+        var filmList;
+        if(this.props.Films){
+            filmList = this.props.Films.Search.map(function(film, i){
+                return <Film Film={film} key={i.toString()}/>;
+            });
+        }
+
+        return (
+            <div className="film-list">
+               {filmList}
+            </div>
+        );
     }
 }
 

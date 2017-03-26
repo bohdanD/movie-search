@@ -9,7 +9,22 @@ class Film extends React.Component{
     }
 
     render(){
-        return <h3>Film component</h3>
+        return (
+            <div className="film">
+                <div className="title">
+                    <h2>{this.props.Film.Title}</h2>
+                </div>
+                <div className="poster">
+                    <img src={this.props.Film.Poster} alt="" />
+                </div>
+                <div className="type">
+                    <h3>Type: {this.props.Film.Type}</h3>
+                </div>
+                <div className="year">
+                    <h3>Year: {this.props.Film.Year}</h3>
+                </div>
+            </div>
+        );
     }
 }
 

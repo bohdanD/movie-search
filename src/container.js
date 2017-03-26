@@ -9,13 +9,13 @@ import getXmlHttp from './Constants/getXmlHttp';
 class Container extends React.Component{
     constructor(props){
         super(props);
-        this.state = {data: {}, error: ''};
+        this.state = {data: '', error: ''};
 
         this.searchFilms = this.searchFilms.bind(this);
     }
 
     searchFilms(searchStr){
-        var urlSrt = Url + 't=' + searchStr;
+        var urlSrt = Url + 's=' + searchStr;
         var request = getXmlHttp();
         request.open('GET', urlSrt, true);
         request.onreadystatechange = () =>{
@@ -34,7 +34,7 @@ class Container extends React.Component{
         return (
             <div>
                 <SearchForm SearchMethod={this.searchFilms}/>
-                <FilmList />    
+                <FilmList Films={this.state.data}/>    
             </div>
             );
     }
