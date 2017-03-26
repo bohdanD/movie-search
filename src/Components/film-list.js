@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import Film from './film';
+import {Film} from './film';
 
 class FilmList extends React.Component{
     constructor(props){
