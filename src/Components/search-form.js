@@ -18,6 +18,7 @@ class SearchForm extends React.Component{
     handleSubmit(e){
         console.log(this.state.searchString);
         this.setState({searchString: ''});
+        this.props.SearchMethod(this.state.searchString);
         e.preventDefault();
     }
 
