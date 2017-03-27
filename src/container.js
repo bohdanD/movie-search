@@ -23,7 +23,14 @@ class Container extends React.Component{
                 if(request.status == 200){
                     var data = JSON.parse(request.response);
                     console.log(data);
-                this.setState({data: data});
+                    if(data.Response == "False"){
+                        this.setState({data: '', error: data.Error});
+                    }else{
+                        this.setState({data: data});
+                    }
+                }else{
+                    this.setState({data: '', error: 'Check you connection. Status:' 
+                        + request.statusText});
                 }
             }
         }
@@ -34,7 +41,7 @@ class Container extends React.Component{
         return (
             <div>
                 <SearchForm SearchMethod={this.searchFilms}/>
-                <FilmList Films={this.state.data}/>    
+                <FilmList Films={this.state.data} Message={this.state.error}/>    
             </div>
             );
     }
