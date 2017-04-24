@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 
 class Film extends React.Component{
@@ -22,6 +20,9 @@ class Film extends React.Component{
                 </div>
                 <div className="year">
                     <h3>Year: {this.props.Film.Year}</h3>
+                </div>
+                <div className="divider">
+                    <hr></hr>
                 </div>
             </div>
         );
